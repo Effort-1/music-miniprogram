@@ -1,0 +1,31 @@
+// wxs 不支持 ES6 语法
+
+// 格式化播放量
+function formatCount(count) {
+  var count = parseInt(count);
+  if (count > 100000000) {
+    return (count / 100000000).toFixed(1) + "亿";
+  } else if (count > 10000) {
+    return (count / 10000).toFixed(1) + "万";
+  } else {
+    return count + "";
+  }
+}
+
+// 格式化播放时间
+function padLeftZero(time) {
+  time = time + "";
+  return ("00"+time).slice(time.length)
+}
+
+function formatDuration(duration) {
+  duration = parseInt(duration) / 1000;
+  var minute = Math.floor(duration / 60);
+  var second = duration % 60;
+  return padLeftZero(minute) + ":" + padLeftZero(second)
+}
+
+module.exports = {
+  formatCount: formatCount,
+  formatDuration:formatDuration
+};

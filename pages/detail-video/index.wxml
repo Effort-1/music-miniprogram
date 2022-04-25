@@ -1,0 +1,6 @@
+<!--pages/detail-video/index.wxml-->
+<video class="video" src="{{mvURLInfo.url}}" autoplay show-mute-btn></video>
+
+<view wx:for="{{100}}">
+视频详情:{{item}}
+</view>
