@@ -1,15 +1,19 @@
 {
   "pages": [
-    "pages/home-video/index",
     "pages/home-music/index",
+    "pages/home-video/index",
     "pages/detail-video/index",
-    "pages/detail-search/index"
+    "pages/detail-search/index",
+    "components/area-header/index",
+    "pages/more-songs/index",
+    "pages/music-player/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fafafa",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "requiredBackgroundModes": ["audio"]
   },
   "tabBar": {
     "list": [

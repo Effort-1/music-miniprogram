@@ -15,17 +15,17 @@ function formatCount(count) {
 // 格式化播放时间
 function padLeftZero(time) {
   time = time + "";
-  return ("00"+time).slice(time.length)
+  return ("00" + time).slice(time.length);
 }
 
 function formatDuration(duration) {
   duration = parseInt(duration) / 1000;
   var minute = Math.floor(duration / 60);
   var second = duration % 60;
-  return padLeftZero(minute) + ":" + padLeftZero(second)
+  return padLeftZero(minute) + ":" + padLeftZero(second);
 }
 
 module.exports = {
   formatCount: formatCount,
-  formatDuration:formatDuration
+  formatDuration: formatDuration,
 };

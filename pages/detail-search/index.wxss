@@ -1,1 +1,71 @@
-/* pages/detail-search/index.wxss */
+page {
+	padding: 0 20rpx;
+	padding-top: 56px;
+}
+/* 搜索框 */
+.search {
+	position: fixed;
+	top: 0;
+	left: 20rpx;
+	right: 20rpx;
+}
+/* 热门搜索 */
+.list .tags {
+	float: left;
+	margin: 0 0 20rpx 25rpx;
+	background-color: #fff;
+	padding: 10rpx 20rpx;
+	border-radius: 10rpx;
+}
+.list .tags:first-of-type {
+	color: #26ce8a;
+}
+
+/* 搜索建议 */
+.suggest {
+	padding: 10rpx;
+}
+
+.suggest .title {
+	font-size: 34rpx;
+	color: #26ce8a;
+	font-weight: 700;
+}
+
+.suggest .item {
+	margin-top: 16rpx;
+}
+.content {
+	display: flex;
+	align-items: center;
+}
+.suggest .item .icon {
+	display: inline-block;
+	width: 80rpx;
+	margin-left: -20rpx;
+}
+
+.suggest .item .text {
+	font-size: 35rpx;
+	flex: 1;
+
+	/* 显示一行 */
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	display: -moz-box;
+	-moz-line-clamp: 1;
+	-moz-box-orient: vertical;
+	word-wrap: break-word;
+	word-break: break-all;
+	white-space: normal;
+	overflow: hidden;
+}
+
+/* 搜索结果 */
+.result .title {
+	font-size: 38rpx;
+	color: #26ce8a;
+	font-weight: 550;
+}

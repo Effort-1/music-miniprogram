@@ -2,28 +2,36 @@
   "projectname": "TestDemo",
   "setting": {
     "compileHotReLoad": false,
-    "urlCheck": false
+    "urlCheck": false,
+    "autoAudits": true
   },
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "condition": {
     "miniprogram": {
       "list": [
         {
-          "name": "detail-video",
-          "pathName": "pages/detail-video/index",
-          "query": "id=10928277",
+          "name": "",
+          "pathName": "pages/music-player/index",
+          "query": "id=1901371647",
           "launchMode": "default",
           "scene": null
         },
         {
-          "name": "music",
-          "pathName": "pages/home-music/index",
-          "query": "",
+          "name": "",
+          "pathName": "pages/detail-video/index",
+          "query": "id=10880673",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/music-player/index",
+          "query": "id=441491828",
           "launchMode": "default",
           "scene": null
         }
       ]
     }
   },
-  "libVersion": "2.10.4"
+  "libVersion": "2.17.0"
 }

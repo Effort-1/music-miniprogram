@@ -1,0 +1,50 @@
+/* components/music-song-item/index.wxss */
+.item {
+  display: flex;
+  margin: 36rpx 0 10rpx;
+}
+
+.index {
+  font-size: 30rpx;
+  padding: 12rpx;
+}
+
+.info {
+  display: 1;
+  margin-left: 16rpx;
+}
+
+.info .name {
+  font-size: 30rpx;
+}
+
+.info .text {
+  /* 显示两行 */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 1;
+  -moz-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.source {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.source .icon {
+  width: 38rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}
+
+.source .dots {
+  margin: 0 8rpx;
+}

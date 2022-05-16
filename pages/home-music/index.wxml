@@ -1,2 +1,88 @@
 <!--pages/home-music/index.wxml-->
-<van-search disabled shape="round" background="#fafafa" placeholder="请输入你要搜索的歌曲" bind:click-input="handleSearchClick" />
+
+<!-- <button open-type="getUserInfo" bindtap="handleUserInfo">获取用户个人信息</button> -->
+
+<!-- 首页搜索框 -->
+<van-search
+ disabled
+ shape="round"
+ background="#fafafa"
+ placeholder="请输入你要搜索的歌曲"
+ bind:click-input="handleSearchClick"
+/>
+
+<!-- 轮播图 -->
+<swiper
+ class="swiper"
+ style="height: {{swiperHeight}}px;"
+ indicator-active-color="#fff"
+ indicator-dots
+ autoplay
+ circular
+>
+	<block wx:for="{{banners}}" wx:key="bannerId">
+		<swiper-item class="swiper-item">
+			<image
+			 class="swiper-image"
+			 src="{{item.pic}}"
+			 mode="widthFix"
+			 bindload="handleSwiperImageLoaded"
+			/>
+		</swiper-item>
+	</block>
+</swiper>
+
+<!-- 一 解决插槽默认内容问题,添加showRight属性
+<area-header showRight="{{false}}">
+  <text>hahhahah</text>
+</area-header>
+-->
+
+<!-- 推荐歌曲 -->
+<view class="recommend-songs" wx:if="{{recommendSongs.length>0}}">
+	<area-header title="推荐歌曲" bind:click="handleRecommendMoreClick" />
+	<view class="song-list">
+		<block wx:for="{{recommendSongs}}" wx:key="id">
+			<song-item-v1 item="{{item}}" bindtap="handleSongItemClick" data-index="{{index}}" />
+		</block>
+	</view>
+</view>
+
+<!-- 热门歌单 -->
+<view class="hot-song" wx:if="hotSongMenus.length>0">
+	<song-menu-area title="热门歌单" SongMenus="{{hotSongMenus}}" />
+</view>
+
+<!-- 推荐歌单 -->
+<view class="hot-song" wx:if="recommendSongMenus>0">
+	<song-menu-area title="推荐歌单" SongMenus="{{recommendSongMenus}}" />
+</view>
+
+<!-- 巅峰榜 -->
+<view class="">
+	<area-header title="巅峰榜" showRight="{{false}}" />
+	<view class="ranking-list">
+		<block wx:for="{{rankings}}" wx:key="index">
+			<ranking-area-item item="{{item}}" bindtap="handleRankingItemClick" data-idx="{{index}}" />
+		</block>
+	</view>
+</view>
+
+<!-- 播放工具栏 -->
+<view class="play-bar-placeholder" wx:if="{{currentSong.id}}" />
+<view class="play-bar" wx:if="{{currentSong.id}}" bindtap="handlePlayBarClick">
+	<view class="left">
+		<image
+		 class="album ablum-anim"
+		 style="animation-play-state: {{playAnimState}};"
+		 mode="aspectFill"
+		 src="{{currentSong.al.picUrl}}"
+		/>
+		<view class="name">{{currentSong. name}}</view>
+	</view>
+	<view class="right">
+		<image class="icon icon-play" src="/assets/images/music/{{isPlaying ? 'pause' : 'play'}}_icon.png" catchtap="handlePlayBtnClick" />
+		<image class="icon icon-list" src="/assets/images/music/playlist_icon.png" />
+	</view>
+</view>
+

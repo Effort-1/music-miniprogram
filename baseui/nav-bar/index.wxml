@@ -1,0 +1,22 @@
+<!--baseui/nav-bar/index.wxml-->
+<view class="nav">
+	<view class="status" style="height: {{statusBarHeight}}px;" />
+	<view class="nav-bar" style="height: {{navBarHeight}}px;">
+		<view class="left" bindtap="handleBackClick">
+			<view class="left-slot">
+				<slot name="left" />
+			</view>
+			<view class="left-arrow">
+				<image class="icon" src="/assets/images/icon/arrow-left.png" />
+			</view>
+		</view>
+		<view class="center">
+			<view class="center-slot">
+				<slot name="title" />
+			</view>
+			<view class="center-title">{{title}}</view>
+		</view>
+		<view class="right" />
+	</view>
+</view>
+

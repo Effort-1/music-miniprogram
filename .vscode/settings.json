@@ -1,0 +1,32 @@
+{
+  "files.autoSave": "afterDelay",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "colorTabs.config": [
+    {
+      "regex": "pages/music-player\\.*"
+    },
+    {
+      "regex": "pages/music-player\\.*"
+    },
+    {
+      "regex": "\\.*"
+    },
+    {
+      "regex": ".*/web/.*"
+    },
+    {
+      "regex": ".*/mobile/.*"
+    }
+  ],
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#B696A4",
+    "statusBar.background": "#B696A4",
+    "statusBar.foreground": "#000000",
+    "activityBar.background": "#B696A4",
+    "activityBar.foreground": "#000000",
+    "titleBar.activeBackground": "#B696A4",
+    "titleBar.activeForeground": "#000000"
+  },
+  "colorTabs.statusBarBackground": false,
+  "colorTabs.tabBorder": false
+}

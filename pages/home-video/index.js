@@ -1,5 +1,6 @@
 // pages/home-video/index.js
 import { getTopMvs } from "../../service/api_video";
+import { playStore } from "../../store/player-store";
 Page({
   /**
    * 页面的初始数据
@@ -25,7 +26,7 @@ Page({
   },
 
   // 封装网络请求的方法
-  async getTopMvsData(offset,limit=10) {
+  async getTopMvsData(offset, limit = 10) {
     // 判断是否可以请求
     if (!this.data.hasMore) return;
 
@@ -33,7 +34,7 @@ Page({
     wx.showNavigationBarLoading();
 
     // 请求数据
-    const { data, hasMore } = await getTopMvs(offset,limit);
+    const { data, hasMore } = await getTopMvs(offset, limit);
     let newData = this.data.topMvs;
     if (offset === 0) {
       newData = data;
@@ -62,26 +63,10 @@ Page({
       // 条转到的页面
       url: `../detail-video/index?id=${id}`,
     });
+
+    // 如果有其他歌曲在播放将其关闭
+    playStore.dispatch("changeMusicPlayStatusAction", false);
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -93,7 +78,7 @@ Page({
     this.setData({ topMvs: data });
     wx.stopPullDownRefresh(); */
 
-    this.getTopMvsData(0,20);
+    this.getTopMvsData(0, 20);
   },
 
   /**

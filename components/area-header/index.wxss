@@ -1,0 +1,32 @@
+/* components/area-header/index.wxss */
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 30rpx 0;
+}
+
+/* 当 .slot 选择器下的子标签为空时,会激活这个选择器*/
+/* .header .slot:empty + .default {
+  display: inline-block;
+}
+
+.default {
+  display: none;
+} */
+
+.header .title {
+	font-size: 38rpx;
+	font-weight: 550;
+}
+
+.default .text {
+	font-size: 34rpx;
+	color: #777;
+}
+
+.right .default .icon {
+	vertical-align: middle;
+	margin-left: 4rpx;
+	width: 30rpx;
+	height: 30rpx;
+}

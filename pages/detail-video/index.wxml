@@ -1,6 +1,40 @@
 <!--pages/detail-video/index.wxml-->
-<video class="video" src="{{mvURLInfo.url}}" autoplay show-mute-btn></video>
+<wxs src="../../utils/format.wxs" module="format" />
+<video
+ class="video"
+ src="{{mvURLInfo.url}}"
+ autoplay
+ show-mute-btn
+></video>
 
-<view wx:for="{{100}}">
-视频详情:{{item}}
+<!-- 视频描述 -->
+<view class="content">
+	<view class="desc">
+		{{mvDetail.desc || mvDetail.name}}
+	</view>
+	<view class="artistName">
+		{{mvDetail.artistName}}
+	</view>
+	<view class="count-data">
+		<text class="count">{{format.formatCount(mvDetail.playCount)}}</text>
+		-
+		<text class="date">{{mvDetail.publishTime}}</text>
+	</view>
 </view>
+
+<!-- 视频推荐 -->
+<view class="recommend">
+	<area-header title="推荐视频" showRight="{{false}}" />
+	<block wx:for="{{mvRelated}}" wx:key="vid">
+		<view class="recommend-mv" bindtap="handleRecommendVideoClick" data-vid="{{item.vid}}">
+			<view class="left">
+				<image class="image" mode="widthFix" src="{{item.coverUrl}}" />
+			</view>
+			<view class="right">
+				<view class="title">{{item.title}}</view>
+				<view class="author">{{item.creator[0].userName}}</view>
+			</view>
+		</view>
+	</block>
+</view>
+

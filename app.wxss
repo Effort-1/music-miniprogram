@@ -1,4 +1,15 @@
 /**app.wxss**/
 page {
 	background-color: #fafafa;
+	padding: 0 20rpx;
+	box-sizing: border-box;
+}
+
+/* 搜索框样式 */
+.van-search__content {
+	background-color: #fff !important;
+}
+
+.van-search {
+	padding: 10px 0px !important;
 }

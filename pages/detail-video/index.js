@@ -24,7 +24,7 @@ Page({
 
     this.getPageData(id);
   },
-  
+
   getPageData(id) {
     // 请求 mv 视频信息
     getMvURL(id).then((res) => {
@@ -41,4 +41,13 @@ Page({
       this.setData({ mvRelated: res.data });
     });
   },
+
+  // 处理推荐视频的点击事件
+/*   handleRecommendVideoClick(event) {
+    const id = event.currentTarget.dataset.vid;
+    wx.navigateTo({
+      url: "../detail-video/index?id=" + id,
+    });
+    console.log(event);
+  }, */
 });

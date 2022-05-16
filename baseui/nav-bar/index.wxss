@@ -1,0 +1,46 @@
+/* baseui/nav-bar/index.wxss */
+page {
+  padding: 0;
+}
+
+.nav-bar {
+  display: flex;
+  /* height: 44px; */
+  text-align: center;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  width: 120rpx;
+}
+.left-arrow {
+  display: flex;
+  align-items: center;
+}
+.left-arrow .icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+.left-arrow {
+  display: none;
+}
+.left-slot:empty + .left-arrow {
+  display: block;
+}
+
+.center {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-title {
+  display: none;
+}
+
+.center-slot:empty + .center-title {
+  display: block;
+}

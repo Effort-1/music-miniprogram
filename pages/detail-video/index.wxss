@@ -1,9 +1,56 @@
 /* pages/detail-video/index.wxss */
 page {
-	padding-top: 225px;
+  padding-top: 225px;
 }
-.video{
-	position: fixed;
-	width: 100%;
-	top: 0;
+.video {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content .desc {
+  font-size: 36rpx;
+  font-weight: 550;
+  margin-bottom: 30rpx;
+}
+
+.content .artistName {
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+  color: #53534d;
+}
+
+.content .count-data {
+  font-size: 28rpx;
+  color: #53534d;
+}
+
+.recommend-mv {
+  display: flex;
+}
+
+.left .image {
+  width: 300rpx;
+}
+
+.right {
+  display: flex;
+  margin-left: 26rpx;
+  flex-direction: column;
+}
+
+.right .title {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.right .author {
+  margin-top: 26rpx;
 }

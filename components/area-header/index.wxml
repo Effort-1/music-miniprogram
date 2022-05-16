@@ -1,0 +1,10 @@
+<!--components/area-header/index.wxml-->
+<view class="header">
+  <view class="title">{{title}}</view>
+  <view class="right">
+    <view class="default" wx:if="{{showRight}}" bindtap="handleRighrClick">
+      <text class="text">{{rightText}}</text>
+      <image class="icon" src="../../assets/images/icon/箭头.png"></image>
+    </view>
+  </view>
+</view>

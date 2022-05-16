@@ -1,0 +1,32 @@
+/* components/song-item-v1/index.wxss */
+.item {
+  display: flex;
+  padding: 16rpx 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.image {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 16rpx;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin-left: 26rpx;
+}
+.content .name {
+  font-size: 35rpx;
+  font-weight: 550;
+}
+.content .source {
+  margin-top: 15rpx;
+  color: #777;
+}
+
+.icon {
+  width: 30rpx;
+  height: 30rpx;
+}
